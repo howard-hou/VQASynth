@@ -79,21 +79,21 @@ def human_like_distance(distance_meters):
             (
                 round(distance_meters * 100, 2),
                 "centimeters",
-                0.2,
+                1.0,
             ),  # Centimeters for very small distances
             (
                 round(distance_meters * 39.3701, 2),
                 "inches",
-                0.8,
+                0.0,
             ),  # Inches for the majority of cases under 1 meter
         ]
     elif distance_meters < 3:  # For distances less than 3 meters
         choices = [
-            (round(distance_meters, 2), "meters", 0.5),
+            (round(distance_meters, 2), "meters", 1.0),
             (
                 round(distance_meters * 3.28084, 2),
                 "feet",
-                0.5,
+                0.0,
             ),  # Feet as a common unit within indoor spaces
         ]
     else:  # For distances from 3 up to 10 meters
@@ -101,12 +101,12 @@ def human_like_distance(distance_meters):
             (
                 round(distance_meters, 2),
                 "meters",
-                0.7,
+                1.0,
             ),  # Meters for clarity and international understanding
             (
                 round(distance_meters * 3.28084, 2),
                 "feet",
-                0.3,
+                0.0,
             ),  # Feet for additional context
         ]
 
